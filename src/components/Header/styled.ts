@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const VERTICAL_PADDING = 20;
 const HORIZONTAL_PADDING = 40;
-const HEIGHT = 70;
+const HEIGHT = 80;
 
 const StyledHeader = styled.header`
   position: relative;
