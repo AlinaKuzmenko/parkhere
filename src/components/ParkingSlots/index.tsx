@@ -1,4 +1,4 @@
-import { IParkingSlot, IParkingSlots } from '../../types';
+import { IParkingSlot, IParkingSlots } from '../../store/types';
 import Slot from './Slot';
 import StyledParkingSlots from './styled';
 
@@ -7,6 +7,7 @@ interface IParkingSlotsProps {
   onEnter: () => void;
   onExit: (parkingSlot: IParkingSlot) => void;
 }
+
 function ParkingSlots({ parkingSlots, onEnter, onExit }: IParkingSlotsProps) {
   return (
     <StyledParkingSlots>

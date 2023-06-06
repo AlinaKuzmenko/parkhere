@@ -28,8 +28,18 @@ const StyledSlot = styled.li`
     opacity: .7;
     transition: opacity .3s;
     color: black;
+    
     &:hover {
       opacity: 1;
+    }
+    
+    &:disabled {
+      opacity: .3;
+      cursor: default;
+      
+      &:hover {
+        opacity: .3;
+      }
     }
   }
 `;

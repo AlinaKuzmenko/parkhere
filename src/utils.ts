@@ -1,4 +1,4 @@
-export function getRandomLicencePlate() {
+export function getRandomLicencePlate(): string {
   return Math.random().toString(36).substring(2, 7).toUpperCase();
 }
 

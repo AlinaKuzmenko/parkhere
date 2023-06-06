@@ -1,8 +1,13 @@
-import { IParkingSlot } from '../../../types';
+import { IParkingSlot } from '../../../store/types';
 import StyledSlot from './styled';
 
-function getParkingSlotState(slot: IParkingSlot) {
-  return slot.cars.find(({ exit }) => !exit) ? 'inUse' : 'available';
+enum ParkingSlotState {
+  available= 'available',
+  inUse = 'inUse'
+}
+
+function getParkingSlotState(slot: IParkingSlot): keyof typeof ParkingSlotState {
+  return slot.cars.find(({ exit }) => !exit) ? ParkingSlotState.inUse : ParkingSlotState.available;
 }
 
 interface IParkingSlotProps {
@@ -12,16 +17,18 @@ interface IParkingSlotProps {
 
 function Slot(props: IParkingSlotProps) {
   const { slot, onExit } = props;
+  const parkingSlotState = getParkingSlotState(slot);
   return (
     <StyledSlot>
       <span className="name">
         {slot.name}
       </span>
-      <span className={`state ${getParkingSlotState(slot)}`} />
+      <span className={`state ${parkingSlotState}`} />
       <button
         type="button"
         className="exitButton"
         onClick={onExit}
+        disabled={parkingSlotState == ParkingSlotState.available}
       >
         Exit
       </button>

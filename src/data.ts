@@ -1,4 +1,4 @@
-import { IParkingSlots } from './types';
+import { IParkingSlots } from './store/types';
 
 
 export const defaultParkingSlots: IParkingSlots = {

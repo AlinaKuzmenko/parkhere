@@ -1,5 +1,5 @@
 import StyledHistory from './styled';
-import { ICar, IParkingSlot, IParkingSlots } from '../../types';
+import { ICar, IParkingSlot, IParkingSlots } from '../../store/types';
 
 interface IParkingHistoryProps {
   parkingSlots: IParkingSlots;
